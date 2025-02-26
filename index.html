@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ПАНИКА!</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding-top: 20%;
+        }
+        h1 {
+            font-size: 3em;
+            animation: blink 0.5s linear infinite;
+        }
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function() {
+            // Устрашающий текст на экране
+            document.body.innerHTML = "<h1>НЕОЖИДАННАЯ СИСТЕМНАЯ ОШИБКА! ПЕРЕЗАГРУЗКА НЕВОЗМОЖНА!</h1>";
+
+            // Звук страха (можно загрузить страшный звук)
+            var audio = new Audio('https://www.soundjay.com/button/beep-07.wav');
+            audio.play();
+            
+            // Блокировка клавиш (чтобы не закрыть страницу сразу)
+            document.onkeydown = function(e) {
+                return false; // Блокируем клавиши
+            };
+            
+            // Ожидание для панического эффекта
+            setTimeout(function() {
+                alert("ВАШ КОМПЬЮТЕР ПОДДЕРЖИВАЕТ НЕИЗВЕСТНЫЕ ПРОЦЕССЫ!!!");
+                window.location.reload(); // Перезагружаем страницу
+            }, 3000);
+        };
+    </script>
+</head>
+<body>
+    <h1>Загрузка...</h1>
+</body>
+</html>
